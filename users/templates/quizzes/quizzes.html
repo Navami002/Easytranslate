@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to bottom right, #e8f8f5, #d4efdf);
+        font-family: 'Arial', sans-serif;
+    }
+
+    .quiz-container {
+        text-align: center;
+        margin: 50px auto;
+        padding: 30px;
+        max-width: 900px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        font-size: 2.8em;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .caption {
+        font-size: 1.3em;
+        color: #34495e;
+        margin-bottom: 40px;
+    }
+
+    .quiz-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .quiz-button {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 1.4em;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(to right, #3498db, #5dade2);
+        border-radius: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .quiz-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(to right, #2980b9, #3498db);
+    }
+
+    .back-home {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 25px;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #3498db;
+        background: white;
+        border: 2px solid #3498db;
+        border-radius: 15px;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-home:hover {
+        background: #3498db;
+        color: white;
+        transform: translateY(-3px);
+    }
+</style>
+
+<div class="quiz-container">
+    <h2>Discover Your Next Challenge</h2>
+    <p class="caption">"Embark on a journey of learning and fun! Select a quiz to begin."</p>
+
+    <div class="quiz-list">
+        <a href="{% url 'start_quiz' 'quiz1' %}" class="quiz-button">Quiz 1 - Basics</a>
+        <a href="{% url 'start_quiz' 'quiz2' %}" class="quiz-button">Quiz 2 - Advanced</a>
+        <a href="{% url 'start_quiz' 'quiz3' %}" class="quiz-button">Quiz 3 - Intermediate</a>
+        <a href="{% url 'start_quiz' 'quiz4' %}" class="quiz-button">Quiz 4 - Brain Teasers</a>
+        <a href="{% url 'start_quiz' 'quiz5' %}" class="quiz-button">Quiz 5 - Memory</a>
+        <a href="{% url 'start_quiz' 'quiz6' %}" class="quiz-button">Quiz 6 - Fun Facts</a>
+        <a href="{% url 'start_quiz' 'quiz7' %}" class="quiz-button">Quiz 7 - Logic</a>
+        <a href="{% url 'start_quiz' 'quiz8' %}" class="quiz-button">Quiz 8 - Word Play</a>
+        <a href="{% url 'start_quiz' 'quiz9' %}" class="quiz-button">Quiz 9 - Math</a>
+        <a href="{% url 'start_quiz' 'quiz10' %}" class="quiz-button">Quiz 10 - General Knowledge</a>
+    </div>
+
+    <a href="{% url 'home' %}" class="back-home">Back to Home</a>
+</div>
+{% endblock %}

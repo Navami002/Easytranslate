@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to bottom, #eef2f3, #d9e4ec);
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .quiz-container {
+        margin: 50px auto;
+        max-width: 800px;
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5em;
+        color: #34495e;
+        margin-bottom: 20px;
+    }
+
+    .question {
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        border-left: 5px solid #3498db;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+    }
+
+    .question p {
+        font-size: 1.2em;
+        color: #2c3e50;
+    }
+
+    .options {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .option-label {
+        font-size: 1em;
+        color: #34495e;
+        padding: 10px;
+        background: #ecf0f1;
+        border: 1px solid #d5d8dc;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .option-label:hover {
+        background-color: #d6eaf8;
+    }
+
+    .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        background-color: #3498db;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+    }
+
+    .submit-btn:hover {
+        background-color: #2980b9;
+        transform: translateY(-3px);
+    }
+
+    .back-home {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #3498db;
+        background: none;
+        border: 2px solid #3498db;
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .back-home:hover {
+        background-color: #3498db;
+        color: white;
+    }
+</style>
+
+<div class="quiz-container">
+    <h2>Language Quiz - Test Your Knowledge!</h2>
+    <form method="post" action="{% url 'submit_quiz' %}">
+        {% csrf_token %}
+
+         <!-- Timer -->
+    <div id="timer" style="text-align: right; font-size: 1.2em; font-weight: bold; color: #e74c3c;">
+        Time left: 10:00
+    </div>
+
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. Among the following words, pick out an example for initial consonant cluster:</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q1" value="a" required> Texts</label>
+                <label class="option-label"><input type="radio" name="q1" value="b"> Blue</label>
+                <label class="option-label"><input type="radio" name="q1" value="c"> Sects</label>
+                <label class="option-label"><input type="radio" name="q1" value="d"> Toys</label>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. In the compound word myself, which sound receives an accent?</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q2" value="a" required> /m/</label>
+                <label class="option-label"><input type="radio" name="q2" value="b"> /ai/</label>
+                <label class="option-label"><input type="radio" name="q2" value="c"> /s/</label>
+                <label class="option-label"><input type="radio" name="q2" value="d"> /e/</label>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. Weak form of a word is pronounced when:</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q3" value="a" required> It is part of a sentence</label>
+                <label class="option-label"><input type="radio" name="q3" value="b"> It is part of a phrase</label>
+                <label class="option-label"><input type="radio" name="q3" value="c"> It is pronounced with an emphasis</label>
+                <label class="option-label"><input type="radio" name="q3" value="d"> It is in isolation</label>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. In yes/no question sentence, which tone is used?</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q4" value="a" required> The falling tone</label>
+                <label class="option-label"><input type="radio" name="q4" value="b"> The rising tone</label>
+                <label class="option-label"><input type="radio" name="q4" value="c"> The falling-Rising tone</label>
+                <label class="option-label"><input type="radio" name="q4" value="d"> The rising-Falling tone</label>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. In rapid speech, certain sounds are omitted. It is called:</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q5" value="a" required> Regressive assimilation</label>
+                <label class="option-label"><input type="radio" name="q5" value="b"> Progressive assimilation</label>
+                <label class="option-label"><input type="radio" name="q5" value="c"> Elision</label>
+                <label class="option-label"><input type="radio" name="q5" value="d"> All of the above</label>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. What is a free morpheme?</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q6" value="a" required> The smallest sound unit</label>
+                <label class="option-label"><input type="radio" name="q6" value="b"> A morpheme that cannot stand alone</label>
+                <label class="option-label"><input type="radio" name="q6" value="c"> A morpheme that can stand on its own</label>
+                <label class="option-label"><input type="radio" name="q6" value="d"> It is a kind of affixation</label>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. An affix that is attached at the beginning of a root word is called:</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q7" value="a" required> Prefix</label>
+                <label class="option-label"><input type="radio" name="q7" value="b"> Suffix</label>
+                <label class="option-label"><input type="radio" name="q7" value="c"> Infix</label>
+                <label class="option-label"><input type="radio" name="q7" value="d"> Bound morpheme</label>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. Identify the word formation technique in which a word is shortened to one of its parts:</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q8" value="a" required> Acronym</label>
+                <label class="option-label"><input type="radio" name="q8" value="b"> Compounding</label>
+                <label class="option-label"><input type="radio" name="q8" value="c"> Clipping</label>
+                <label class="option-label"><input type="radio" name="q8" value="d"> Back-formation</label>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. What is polysemy?</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q9" value="a" required> Two or more words spelled alike but differ in meaning</label>
+                <label class="option-label"><input type="radio" name="q9" value="b"> The existence of a word because of its opposite</label>
+                <label class="option-label"><input type="radio" name="q9" value="c"> It refers to the multiplicity of meaning</label>
+                <label class="option-label"><input type="radio" name="q9" value="d"> The literal expression of a word</label>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. The term denotation refers to:</p>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q10" value="a" required> The emotive meaning of a word</label>
+                <label class="option-label"><input type="radio" name="q10" value="b"> The suggestive meaning of a word</label>
+                <label class="option-label"><input type="radio" name="q10" value="c"> Literal meaning of a word</label>
+                <label class="option-label"><input type="radio" name="q10" value="d"> Connotative meaning of a word</label>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Quiz</button>
+    </form>
+    <a href="{% url 'home' %}" class="back-home">Back to Home</a>
+</div>
+<script>
+    let time = 600; // Time in seconds (10 minutes)
+    const timer = document.getElementById('timer');
+    const countdown = setInterval(() => {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+
+        // Update timer text
+        timer.textContent = `Time left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+        // Auto-submit the form if time runs out
+        if (time <= 0) {
+            clearInterval(countdown);
+            document.forms[0].submit();
+        }
+        time--;
+    }, 1000);
+</script>
+{% endblock %}

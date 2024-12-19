@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 9</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f0f4f8, #d9e8c5);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            margin: 50px auto;
+            max-width: 800px;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border-left: 5px solid #2980b9;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .question p {
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        .options {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-label {
+            font-size: 1em;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .option-label:hover {
+            background-color: #aed6f1;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: #2980b9;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #21618c;
+            transform: translateY(-3px);
+        }
+
+        .back-home {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #2980b9;
+            background: none;
+            border: 2px solid #2980b9;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-home:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h2>Language Quiz 9 - Test Your Knowledge!</h2>
+        <form method="post" action="submit_quiz9.php">
+
+             <!-- Timer -->
+    <div id="timer" style="text-align: right; font-size: 1.2em; font-weight: bold; color: #e74c3c;">
+        Time left: 10:00
+    </div>
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. The sentence “he was punished” becomes “why was he punished?” it is:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q1" value="a" required> Passivation transformation</label>
+                    <label class="option-label"><input type="radio" name="q1" value="b"> Interrogative transformation</label>
+                    <label class="option-label"><input type="radio" name="q1" value="c"> Do support transformation</label>
+                    <label class="option-label"><input type="radio" name="q1" value="d"> Negation</label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. If a sentence consists of a noun phrase and a verb phrase, its representation is:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q2" value="a" required> S ➞ NP+ VP</label>
+                    <label class="option-label"><input type="radio" name="q2" value="b"> S ➞ VP+ NP</label>
+                    <label class="option-label"><input type="radio" name="q2" value="c"> S ➞ VP+ PP</label>
+                    <label class="option-label"><input type="radio" name="q2" value="d"> S ➞Det + NP</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Words with one syllable is called:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q3" value="a" required> Monosyllabic word</label>
+                    <label class="option-label"><input type="radio" name="q3" value="b"> Disyllabic word</label>
+                    <label class="option-label"><input type="radio" name="q3" value="c"> Multisyllabic word</label>
+                    <label class="option-label"><input type="radio" name="q3" value="d"> Polysyllabic word</label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. The number of nasal sounds in English:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q4" value="a" required> 2</label>
+                    <label class="option-label"><input type="radio" name="q4" value="b"> 3</label>
+                    <label class="option-label"><input type="radio" name="q4" value="c"> 4</label>
+                    <label class="option-label"><input type="radio" name="q4" value="d"> 5</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. The opposite buy/sell is an example for:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q5" value="a" required> Gradable antonym</label>
+                    <label class="option-label"><input type="radio" name="q5" value="b"> Non gradable antonym</label>
+                    <label class="option-label"><input type="radio" name="q5" value="c"> Converse antonym</label>
+                    <label class="option-label"><input type="radio" name="q5" value="d"> Complimentary antonym</label>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Transcribe the word bagged:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q6" value="a" required> /bægd/</label>
+                    <label class="option-label"><input type="radio" name="q6" value="b"> /ba:gd/</label>
+                    <label class="option-label"><input type="radio" name="q6" value="c"> /bæged/</label>
+                    <label class="option-label"><input type="radio" name="q6" value="d"> /ba:ged/</label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. The plural of the word fish can be transcribed as:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q7" value="a" required> /fiʃiz/</label>
+                    <label class="option-label"><input type="radio" name="q7" value="b"> /fiʃes/</label>
+                    <label class="option-label"><input type="radio" name="q7" value="c"> /fiʃez/</label>
+                    <label class="option-label"><input type="radio" name="q7" value="d"> /fiʃəz/</label>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Among the following, which word has a syllabic consonant?</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q8" value="a" required> Port</label>
+                    <label class="option-label"><input type="radio" name="q8" value="b"> Seed</label>
+                    <label class="option-label"><input type="radio" name="q8" value="c"> With</label>
+                    <label class="option-label"><input type="radio" name="q8" value="d"> Cattle</label>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Among the following, where can we find an aspirated /pʰ/ sound?</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q9" value="a" required> Spin</label>
+                    <label class="option-label"><input type="radio" name="q9" value="b"> Armpit</label>
+                    <label class="option-label"><input type="radio" name="q9" value="c"> Pit</label>
+                    <label class="option-label"><input type="radio" name="q9" value="d"> Up</label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. In a word, a syllable is uttered with a force because of:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q10" value="a" required> Juncture</label>
+                    <label class="option-label"><input type="radio" name="q10" value="b"> Stress</label>
+                    <label class="option-label"><input type="radio" name="q10" value="c"> Intonation</label>
+                    <label class="option-label"><input type="radio" name="q10" value="d"> Pitch</label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit Quiz</button>
+        </form>
+        <a href="{% url 'home' %}" class="back-home">Back to Home</a>
+
+    </div>
+    <script>
+        let time = 600; // Time in seconds (10 minutes)
+        const timer = document.getElementById('timer');
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+    
+            // Update timer text
+            timer.textContent = `Time left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    
+            // Auto-submit the form if time runs out
+            if (time <= 0) {
+                clearInterval(countdown);
+                document.forms[0].submit();
+            }
+            time--;
+        }, 1000);
+    </script>
+</body>
+
+</html>

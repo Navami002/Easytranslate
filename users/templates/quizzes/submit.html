@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .result-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .quote {
+        font-size: 1.5em;
+        color: #2c3e50;
+        margin: 30px 0;
+        font-style: italic;
+    }
+
+    .message {
+        font-size: 1.5em;
+        color: #27ae60;
+        margin: 20px 0;
+    }
+
+    .action-links {
+        margin-top: 30px;
+    }
+
+    .action-link {
+        display: inline-block;
+        padding: 12px 25px;
+        margin: 0 10px;
+        text-decoration: none;
+        color: white;
+        background-color: #4CAF50;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .action-link:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="result-container">
+    <h1>Thank You!</h1>
+    
+    <div class="quote">
+        "The future belongs to those who believe in the beauty of their dreams."
+    </div>
+    
+    <div class="message">
+        Your responses have been recorded. Thank you for participating!
+    </div>
+    
+    <div class="action-links">
+        <a href="{% url 'quiz_page' %}" class="action-link">Take Another Quiz</a>
+        <a href="{% url 'home' %}" class="action-link">Go to Home</a>
+    </div>
+</div>
+{% endblock %}

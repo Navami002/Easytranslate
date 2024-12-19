@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 10</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f0f4f8, #d9e8c5);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            margin: 50px auto;
+            max-width: 800px;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border-left: 5px solid #2980b9;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .question p {
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        .options {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-label {
+            font-size: 1em;
+            color: #2c3e50;
+            padding: 10px;
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .option-label:hover {
+            background-color: #aed6f1;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: #2980b9;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #21618c;
+            transform: translateY(-3px);
+        }
+
+        .back-home {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #2980b9;
+            background: none;
+            border: 2px solid #2980b9;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-home:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h2>Language Quiz 10 - Test Your Knowledge!</h2>
+        <form method="post" action="submit_quiz10.php">
+
+             <!-- Timer -->
+    <div id="timer" style="text-align: right; font-size: 1.2em; font-weight: bold; color: #e74c3c;">
+        Time left: 10:00
+    </div>
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. The features that affect speech sounds, tone and juncture are called:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q1" value="a" required> Grammatical features</label>
+                    <label class="option-label"><input type="radio" name="q1" value="b"> Lexical features</label>
+                    <label class="option-label"><input type="radio" name="q1" value="c"> Supra-segmental features</label>
+                    <label class="option-label"><input type="radio" name="q1" value="d"> Syntactic features</label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Aphasia refers to:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q2" value="a" required> Writing disability</label>
+                    <label class="option-label"><input type="radio" name="q2" value="b"> Reading disability</label>
+                    <label class="option-label"><input type="radio" name="q2" value="c"> A partial or total loss of language skills</label>
+                    <label class="option-label"><input type="radio" name="q2" value="d"> Speaking disability</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. The study of signs is called:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q3" value="a" required> Syntax</label>
+                    <label class="option-label"><input type="radio" name="q3" value="b"> Semiology</label>
+                    <label class="option-label"><input type="radio" name="q3" value="c"> Phonology</label>
+                    <label class="option-label"><input type="radio" name="q3" value="d"> Morphology</label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. A word is shortened to form another word by retaining its beginning part is called:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q4" value="a" required> Acronym</label>
+                    <label class="option-label"><input type="radio" name="q4" value="b"> Initialism</label>
+                    <label class="option-label"><input type="radio" name="q4" value="c"> Back clipping</label>
+                    <label class="option-label"><input type="radio" name="q4" value="d"> Fore clipping</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. A word is shortened to form another word by retaining its final part is called:</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q5" value="a" required> Fore clipping</label>
+                    <label class="option-label"><input type="radio" name="q5" value="b"> Back clipping</label>
+                    <label class="option-label"><input type="radio" name="q5" value="c"> Initialism</label>
+                    <label class="option-label"><input type="radio" name="q5" value="d"> Acronym</label>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. What is common about phrase?</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q6" value="a" required> It is a brief expression</label>
+                    <label class="option-label"><input type="radio" name="q6" value="b"> It is a group of words</label>
+                    <label class="option-label"><input type="radio" name="q6" value="c"> It does not have subject – predicate combination</label>
+                    <label class="option-label"><input type="radio" name="q6" value="d"> All of the above</label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Among the following, which word is based on onomatopoeia?</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q7" value="a" required> Exam</label>
+                    <label class="option-label"><input type="radio" name="q7" value="b"> Sitcom</label>
+                    <label class="option-label"><input type="radio" name="q7" value="c"> Cuckoo</label>
+                    <label class="option-label"><input type="radio" name="q7" value="d"> Brunch</label>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Which of these is a historical approach to language?</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q8" value="a" required> Synchronic</label>
+                    <label class="option-label"><input type="radio" name="q8" value="b"> Comparative</label>
+                    <label class="option-label"><input type="radio" name="q8" value="c"> Diachronic</label>
+                    <label class="option-label"><input type="radio" name="q8" value="d"> Philosophical</label>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Which of these refers to the sound feature of a language?</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q9" value="a" required> Syntax</label>
+                    <label class="option-label"><input type="radio" name="q9" value="b"> Morphemic</label>
+                    <label class="option-label"><input type="radio" name="q9" value="c"> Phonetic substances</label>
+                    <label class="option-label"><input type="radio" name="q9" value="d"> Semantics</label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Which symbol represent phonetic transcription?</p>
+                <div class="options">
+                    <label class="option-label"><input type="radio" name="q10" value="a" required> / /</label>
+                    <label class="option-label"><input type="radio" name="q10" value="b"> ( )</label>
+                    <label class="option-label"><input type="radio" name="q10" value="c"> { }</label>
+                    <label class="option-label"><input type="radio" name="q10" value="d"> [ ]</label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit Quiz</button>
+        </form>
+        <a href="{% url 'home' %}" class="back-home">Back to Home</a>
+    </div>
+    <script>
+        let time = 600; // Time in seconds (10 minutes)
+        const timer = document.getElementById('timer');
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+    
+            // Update timer text
+            timer.textContent = `Time left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    
+            // Auto-submit the form if time runs out
+            if (time <= 0) {
+                clearInterval(countdown);
+                document.forms[0].submit();
+            }
+            time--;
+        }, 1000);
+    </script>
+</body>
+
+</html>
